@@ -1,7 +1,6 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+
 //var logger = require("morgan");
 var mongoose = require("mongoose");
 
@@ -20,6 +19,8 @@ var PORT = 3000;
 var app = express();
 
 // Configure middleware
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Use morgan logger for logging requests
 app.use(logger("dev"));

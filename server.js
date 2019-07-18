@@ -31,6 +31,8 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+require("./routes/htmlRoutes")(app);
+
 // Routes
 //require("./routes/loginRoutes")(app);
 //require("./routes/sellerRoutes")(app);

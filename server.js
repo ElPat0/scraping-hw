@@ -1,5 +1,6 @@
 var express = require("express");
-var logger = require("morgan");
+var exphbs = require("express-handlebars");
+//var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // Our scraping tools
@@ -16,10 +17,19 @@ var PORT = 3000;
 // Initialize Express
 var app = express();
 
+// Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
+app.set("view engine", "handlebars");
+
 // Configure middleware
 
 // Use morgan logger for logging requests
-app.use(logger("dev"));
+//app.use(logger("dev"));
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -34,7 +44,7 @@ mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("http://www.echojs.com/").then(function(response) {
+  axios.get("http://www.wsj.com/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
 

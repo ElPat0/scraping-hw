@@ -1,6 +1,6 @@
 
 //Scrape button executes scrape and then populates collapsible div's with article title & content
-$("#scrape-btn").on(click, function() {
+$("#scrape-btn").on("click", function() {
     //The bit that scrapes
 axios.get("https://www.wsj.com").then(function(response) {
 

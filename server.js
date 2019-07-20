@@ -26,35 +26,12 @@ app.engine(
 app.set("view engine", "handlebars");
 
 
-
+// Routes
 require("./routes/htmlRoutes")(app);
 
-////The bit that scrapes
-//axios.get("https://www.wsj.com").then(function(response) {
-//
-//  var $ = cheerio.load(response.data);
-//  var results = [];
-//  
-//  $("article").each(function(i, element) {
-//
-//    var title = $(element).children().text();
-//    var link = $(element).find("a").attr("href");
-//
-//    results.push({
-//      title: title,
-//      link: link
-//    });
-//  });
-//
-//  console.log(results);
-//});
 
-// Routes
-//require("./routes/loginRoutes")(app);
-//require("./routes/sellerRoutes")(app);
-//require("./routes/reviewRoutes")(app);
-//require("./routes/productRoutes")(app);
-//require("./routes/htmlRoutes")(app);
+
+
 
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");

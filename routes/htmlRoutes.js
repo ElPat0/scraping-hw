@@ -5,7 +5,7 @@ module.exports = function (app) {
   app.get("/", function (req, res) {
     //let you = req.user;
 
-    //res.render("index", { user: you });
+    res.render("index");
   });
  // Load Articles page
   //app.get("/articles", function (req, res) {

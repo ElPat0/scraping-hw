@@ -15,13 +15,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-////passport stuffs
-//app.use
-//  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-//);
-//app.use(passport.initialize());
-//app.use(passport.session());
-
 // Handlebars
 app.engine(
   "handlebars",

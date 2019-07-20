@@ -9,9 +9,9 @@ module.exports = function (app) {
     res.render("index", { user: you });
   });
  // Load Articles page
-  app.get("/signup", function (req, res) {
+  app.get("/articles", function (req, res) {
 
-  res.render("signup");
+  res.render("articles");
   });
 //
  // // Seller public profile

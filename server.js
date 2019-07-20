@@ -25,7 +25,10 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-
+//load landing page
+app.get("/", function (req, res) {
+  res.render("index");
+});
 
 // Routes
 require("./routes/htmlRoutes")(app);

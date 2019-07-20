@@ -51,7 +51,7 @@ axios.get("https://www.wsj.com").then(function(response) {
       title: title,
       link: link
     });
-    res.json(results);
+    res.json(response.data);
   });
 
   console.log(results);

@@ -29,25 +29,25 @@ app.set("view engine", "handlebars");
 
 require("./routes/htmlRoutes")(app);
 
-//The bit that scrapes
-axios.get("https://www.wsj.com").then(function(response) {
-
-  var $ = cheerio.load(response.data);
-  var results = [];
-  
-  $("article").each(function(i, element) {
-
-    var title = $(element).children().text();
-    var link = $(element).find("a").attr("href");
-
-    results.push({
-      title: title,
-      link: link
-    });
-  });
-
-  console.log(results);
-});
+////The bit that scrapes
+//axios.get("https://www.wsj.com").then(function(response) {
+//
+//  var $ = cheerio.load(response.data);
+//  var results = [];
+//  
+//  $("article").each(function(i, element) {
+//
+//    var title = $(element).children().text();
+//    var link = $(element).find("a").attr("href");
+//
+//    results.push({
+//      title: title,
+//      link: link
+//    });
+//  });
+//
+//  console.log(results);
+//});
 
 // Routes
 //require("./routes/loginRoutes")(app);

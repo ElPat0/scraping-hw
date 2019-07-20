@@ -1,4 +1,4 @@
-// re-requiring axios
+//re-requiring axios
 var axios = require("axios");
 //Scrape button executes scrape and then populates collapsible div's with article title & content
 $("#scrape-btn").on("click", function() {

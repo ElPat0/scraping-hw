@@ -1,7 +1,7 @@
 //var axios = require("axios");
 //
 //
-//module.exports = function (app) {
+module.exports = function (app) {
 //  
 //  
 //  app.get("/scrape", function (req, res){
@@ -13,8 +13,8 @@
 //  });
 //});
 //
-//  // Render 404 page for any unmatched routes
-//  app.get("*", function (req, res) {
-//    res.render("404");
-//  });
-//};
+  // Render 404 page for any unmatched routes
+  app.get("*", function (req, res) {
+    res.render("404");
+  });
+};

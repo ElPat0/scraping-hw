@@ -4,7 +4,7 @@
 $("#scrape-btn").on("click", function() {
     //The bit that scrapes
 $.ajax({
-  url: "https://scraping-hw.herokuapp.com/scrape",
+  url: "/scrape",
   
 }).done(function(results) {
   console.log(results);

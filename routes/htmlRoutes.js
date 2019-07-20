@@ -1,10 +1,26 @@
 
 
 module.exports = function (app) {
-  // Load index page
+  // Load index page & scrape wsj
   app.get("/", function (req, res) {
-    //let you = req.user;
+    axios.get("https://www.wsj.com").then(function(response) {
 
+    var $ = cheerio.load(response.data);
+    var results = [];
+    
+    $("article").each(function(i, element) {
+  
+      var title = $(element).children().text();
+      var link = $(element).find("a").attr("href");
+  
+      results.push({
+        title: title,
+        link: link
+      });
+    });
+  
+    console.log(results);
+  });
     res.render("index");
   });
  // Load Articles page

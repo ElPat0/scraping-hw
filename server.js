@@ -29,7 +29,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/htmlRoutes")(app);
 //button click to scrape
-$("#scrape-btn").on("click", function() {
+("#scrape-btn").on("click", function() {
   //The bit that scrapes
 axios.get("https://www.wsj.com").then(function(response) {
 

@@ -31,9 +31,12 @@ app.get("/", function (req, res) {
 });
 
 // Routes
+
 require("./routes/htmlRoutes")(app);
 
 //axios thing to scrape wsj
+app.get("/scrape", function (req, res){
+
 axios.get("https://www.wsj.com").then(function(response) {
 
   var $ = cheerio.load(response.data);
@@ -48,9 +51,11 @@ axios.get("https://www.wsj.com").then(function(response) {
       title: title,
       link: link
     });
+    res.json(results);
   });
 
   console.log(results);
+});
 });
 
 

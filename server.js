@@ -33,6 +33,7 @@ app.get("/", function (req, res) {
 // Routes
 
 require("./routes/htmlRoutes")(app);
+require("./routes/scrapingRoute")(app);
 
 //axios thing to scrape wsj
 

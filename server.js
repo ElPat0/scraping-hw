@@ -25,8 +25,7 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-//registering handlebars partial
-Handlebars.registerPartial('articles', '{{articles}}')
+
 
 require("./routes/htmlRoutes")(app);
 

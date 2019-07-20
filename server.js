@@ -19,12 +19,36 @@ app.use(express.static("public"));
 app.engine(
   "handlebars",
   exphbs({
-    defaultLayout: "main"
+    defaultLayout: "main",
+    registerPartial: "articles"
   })
 );
 app.set("view engine", "handlebars");
 
+//registering handlebars partial
+Handlebars.registerPartial('articles', '{{articles}}')
+
 require("./routes/htmlRoutes")(app);
+
+//The bit that scrapes
+axios.get("https://www.wsj.com").then(function(response) {
+
+  var $ = cheerio.load(response.data);
+  var results = [];
+  
+  $("article").each(function(i, element) {
+
+    var title = $(element).children().text();
+    var link = $(element).find("a").attr("href");
+
+    results.push({
+      title: title,
+      link: link
+    });
+  });
+
+  console.log(results);
+});
 
 // Routes
 //require("./routes/loginRoutes")(app);

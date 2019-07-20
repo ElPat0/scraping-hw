@@ -26,6 +26,7 @@ app.engine(
 app.set("view engine", "handlebars");
 
 //scrape wsj on page load?
+app.get("/", function(req, res) {
 axios.get("https://www.wsj.com").then(function(response) {
 
     var $ = cheerio.load(response.data);
@@ -44,6 +45,7 @@ axios.get("https://www.wsj.com").then(function(response) {
   
     console.log(results);
   });
+});
 
 // Routes
 require("./routes/htmlRoutes")(app);

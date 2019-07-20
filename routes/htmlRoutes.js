@@ -5,12 +5,10 @@ module.exports = function (app) {
   
   app.get("/scrape", function (req, res){
     axios.get("https://www.wsj.com").then(function(response) {
-
-  var $ = cheerio.load(response.data);
   
   console.log("wsj");
-  console.log(response.data);
-    res.json(response.data);
+  console.log(response);
+    res.json(response);
   });
 });
 

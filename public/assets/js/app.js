@@ -1,5 +1,5 @@
 // get article JSON info for each
-$.getJSON("/articles", function(data) {
+$.getJSON("/scrape", function(data) {
   
   for (var i = 0; i < data.length; i++) {
     // Display info on page

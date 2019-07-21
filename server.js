@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // conneting to Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds353457.mlab.com:53457/heroku_5tm8gm25", { useNewUrlParser: true });
 
 // Handlebars
 app.engine(
@@ -33,7 +33,6 @@ app.set("view engine", "handlebars");
 // Routes
 
 require("./routes/htmlRoute")(app);
-
 require("./routes/scrapingRoute")(app);
 
 

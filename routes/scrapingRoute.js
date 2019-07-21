@@ -11,7 +11,7 @@ app.get("/scrape", function (req, res){
 
     var $ = cheerio.load(response.data);
 
-    $("article h2").each(function(i, element) {
+    $("article").each(function(i, element) {
         var result = {};
 
         result.title = $(this)

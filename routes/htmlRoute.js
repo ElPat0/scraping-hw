@@ -3,7 +3,7 @@
 module.exports = function (app) {
   // index page
   app.get("/", function (req, res) {
-    res.render("index", { user: you });
+    res.render("index");
   });
 
   // Render 404 page for any unmatched routes

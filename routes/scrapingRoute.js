@@ -7,7 +7,7 @@ module.exports = function (app) {
 
 app.get("/scrape", function (req, res){
 
-    axios.get("http://www.echojs.com/").then(function(response) {
+    axios.get("http://www.wsj.com/").then(function(response) {
 
     var $ = cheerio.load(response.data);
 

@@ -8,7 +8,10 @@ $.getJSON("/articles", function(data) {
 });
 // button scrape function
 $("#scrape-btn").on("click", function(){
-  
+  $.ajax({
+    method: "GET",
+    url: "https://scraping-hw.herokuapp.com/scrape"
+  })
 })
 
 // when use clicks "p" tag, empties notes & saves id

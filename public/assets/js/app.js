@@ -8,7 +8,7 @@ $.getJSON("/scrape", function(data) {
 });
 // button scrape function
 $("#scrape-btn").on("click", function(){
-  
+
 })
 
 // when use clicks "p" tag, empties notes & saves id

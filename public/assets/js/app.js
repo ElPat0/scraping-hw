@@ -6,7 +6,10 @@ $.getJSON("/articles", function(data) {
     $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
   }
 });
-
+// button scrape function
+$("#scrape-btn").on("click", function(){
+  
+})
 
 // when use clicks "p" tag, empties notes & saves id
 $(document).on("click", "p", function() {
@@ -57,15 +60,15 @@ $(document).on("click", "#savenote", function() {
       body: $("#bodyinput").val()
     }
   })
-    // With that done
+    // log data & empty notes
     .then(function(data) {
-      // Log the response
+      
       console.log(data);
-      // Empty the notes section
+      
       $("#notes").empty();
     });
 
-  // Also, remove the values entered in the input and textarea for note entry
+  // reset input values
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });

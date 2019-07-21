@@ -24,6 +24,7 @@ app.get("/scrape", function (req, res){
         //new article
         db.Article.create(result)
         .then(function(dbArticle) {
+          res.json(dbArticle);
             console.log(dbArticle);
         })
         .catch(function(err) {

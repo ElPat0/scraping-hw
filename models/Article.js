@@ -4,6 +4,11 @@ var Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
   
+  imageUrl: {
+    type: String,
+    required: false
+  },
+  
   title: {
     type: String,
     required: true

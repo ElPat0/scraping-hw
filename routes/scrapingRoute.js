@@ -10,6 +10,9 @@ module.exports = function (app) {
       var array = [];
       $("article").each(function (i, element) {
         var result = {};
+        result.imageUrl = $(element)
+        .find()
+        .text();
         result.title = $(element)
           .find(".WSJTheme--headline--19_2KfxG")
           .text();

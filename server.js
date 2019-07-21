@@ -7,6 +7,7 @@ var axios = require("axios");
 var cheerio = require("cheerio");
 
 var db = require("./models");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -17,8 +18,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// conneting to Mongo DB
-mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds353457.mlab.com:53457/heroku_5tm8gm25", { useNewUrlParser: true });
+/// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI);
 
 // Handlebars
 app.engine(
